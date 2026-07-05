@@ -1,0 +1,199 @@
+# 🚀 RootneX CyberWatch
+
+A powerful **Windows-based System Monitoring & Troubleshooting Toolkit** designed for IT Administrators, System Engineers, and Network Engineers. CyberWatch provides an all-in-one command-line interface (CLI) for monitoring system performance, troubleshooting network issues, performing security audits, and automating maintenance tasks.
+
+---
+
+## 📌 Features
+
+### 🖥️ Server Monitoring
+- CPU Usage Monitoring
+- RAM Usage Monitoring
+- Disk Usage Monitoring
+- Running Services
+- Process Monitoring
+- System Uptime
+
+### 💻 Client Monitoring
+- Remote PC Ping
+- Logged-in User Detection
+- Shared Folder Access
+- Remote Disk Information
+- Remote Restart & Shutdown
+
+### 🌐 Network Monitoring
+- Standard & Continuous Ping
+- Traceroute
+- DNS Lookup
+- Netstat Connections
+
+### 🔥 Firewall Monitoring
+- Firewall Status
+- Domain, Private & Public Profiles
+- Firewall Rules Inspection
+
+### 🔒 Security & Logs
+- Windows Event Logs
+- Security Logs
+- Failed Login Detection
+- Antivirus Status
+- Open Port Monitoring
+
+### 📊 Auto Monitoring
+- CPU Alert Monitoring
+- RAM Alert Monitoring
+- Network Connectivity Monitoring
+- Live System Monitoring
+
+### ❤️ System Health Check
+- CHKDSK
+- System File Checker (SFC)
+- Network Connectivity Test
+- Critical Services Status
+- System Information
+
+### 🔍 Network Scan Tools
+- Ping Sweep
+- Port Scanner
+- ARP Scanner
+- Basic Vulnerability Check
+
+### ⚙️ Advanced Tools
+- DNS Lookup
+- IP Information
+- WHOIS Lookup
+
+### 📈 Reports & Dashboard
+- System Report
+- Network Report
+- Security Report
+
+### 📡 Live Traffic Monitor
+- Established Connections
+- Listening Ports
+- Network Statistics
+
+### 🛠️ Maintenance Tools
+- Flush DNS Cache
+- Clear Temporary Files
+- Repair Network Stack
+- Driver Information
+
+### ⚡ Quick Actions
+- IP Configuration
+- Release & Renew IP
+- Netstat
+- Firewall Status
+- ARP Table
+- Route Table
+- Wi-Fi Profiles
+
+---
+
+## 🛠️ Technologies Used
+
+- Batch Script (.bat)
+- Windows Command Prompt (CMD)
+- PowerShell
+- Windows Administration Tools
+- WMIC
+- Netsh
+- Netstat
+
+---
+
+## 📷 Screenshots
+
+### Main Dashboard
+
+![CyberWatch Dashboard](screenshots/home.png)
+
+> Add more screenshots inside the `screenshots/` folder.
+
+---
+
+## 📂 Project Structure
+
+```
+CyberWatch/
+│── README.md
+│── LICENSE
+│── .gitignore
+│── screenshots/
+│     └── home.png
+│── src/
+│     └── cyberwatch.bat
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Windows 10 / Windows 11
+- Administrator Privileges
+- PowerShell Enabled
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/CyberWatch.git
+```
+
+Open the `src` folder and run:
+
+```
+cyberwatch.bat
+```
+
+> **Run as Administrator** for full functionality.
+
+---
+
+## 📖 Use Cases
+
+- IT Infrastructure Monitoring
+- Windows System Administration
+- Help Desk & Technical Support
+- Network Troubleshooting
+- Security Auditing
+- Remote Client Management
+- System Maintenance
+
+---
+
+## 🔮 Future Improvements
+
+- GUI Version
+- Email Alert Notifications
+- Scheduled Monitoring
+- Log Export (CSV/PDF)
+- Multi-Client Dashboard
+- Performance Graphs
+- Windows Service Monitoring
+- Remote Inventory Management
+
+---
+
+## 👨‍💻 Author
+
+**Abdul Halim**
+
+**Network & System Engineer**
+
+- 🌐 GitHub: https://github.com/yourusername
+- 💼 LinkedIn: https://linkedin.com/in/yourprofile
+- 📧 Email: ahalim.cse20@gmail.com
+
+---
+
+## ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
