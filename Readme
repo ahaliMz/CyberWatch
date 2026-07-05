@@ -1,63 +1,246 @@
+<div align="center">
+
 # RootneX CyberWatch
 
-RootneX CyberWatch is a Windows command-line toolkit designed to simplify day-to-day system administration, network diagnostics, and security monitoring. It combines multiple administrative utilities into a single interactive console, allowing IT professionals to monitor system performance, troubleshoot network connectivity, inspect security events, and perform maintenance tasks from one place.
+### Windows-based System Monitoring & Troubleshooting Toolkit
 
-## Features
+A lightweight command-line toolkit built with **Batch Script**, **CMD**, and **PowerShell** for Windows system administration, network diagnostics, security auditing, and automated maintenance.
 
-- Monitor CPU, Memory, Disk, Services, and System Uptime
-- Diagnose network issues using Ping, Traceroute, DNS Lookup, and Port Scanning
-- Review Windows Firewall configuration and active rules
-- Analyze Event Logs and detect failed login attempts
-- Monitor remote clients and perform administrative actions
-- Generate system, network, and security reports
-- Perform maintenance tasks such as DNS cache flushing and network repair
-- Access common Windows administrative commands through a unified interface
+<p>
+<img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
+<img src="https://img.shields.io/badge/Language-Batch%20Script-4CAF50?style=for-the-badge">
+<img src="https://img.shields.io/badge/PowerShell-Supported-5391FE?style=for-the-badge&logo=powershell">
+<img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge">
+</p>
 
-## Technologies
+</div>
 
-- Batch Script
-- Windows Command Prompt (CMD)
-- PowerShell
-- Windows Networking Utilities
-- WMIC
-- Netsh
+---
+
+# Overview
+
+RootneX CyberWatch is an interactive Windows administration toolkit that centralizes multiple monitoring and troubleshooting utilities into a single console application.
+
+It provides administrators with quick access to system performance monitoring, network diagnostics, firewall inspection, security analysis, maintenance utilities, and reporting tools without requiring third-party software.
+
+---
+
+# Features
+
+## 🖥 Server Monitoring
+
+- CPU Usage
+- RAM Usage
+- Disk Usage
+- Running Services
+- Process Monitoring
+- System Uptime
+
+---
+
+## 💻 Client Monitoring
+
+- Remote Ping
+- Logged-in Users
+- Shared Folder Detection
+- Remote Disk Information
+- Remote Restart & Shutdown
+
+---
+
+## 🌐 Network Monitoring
+
+- Ping
+- Continuous Ping
+- Traceroute
+- DNS Lookup
+- Netstat Connections
+
+---
+
+## 🔥 Firewall Monitoring
+
+- Firewall Status
+- Domain Profile
+- Private Profile
+- Public Profile
+- Firewall Rules
+
+---
+
+## 🔐 Security & Logs
+
+- Windows Event Logs
+- Security Logs
+- Failed Login Detection
+- Antivirus Status
+- Open Ports
+
+---
+
+## 📊 Auto Monitoring
+
+- CPU Alert
+- RAM Alert
+- Network Alert
+- Live System Monitoring
+
+---
+
+## ❤️ System Health Check
+
+- CHKDSK
+- System File Checker (SFC)
+- Network Connectivity Test
+- Critical Services Check
+- System Information
+
+---
+
+## 🔍 Network Scan Tools
+
+- Ping Sweep
+- Port Scanner
+- ARP Scanner
+- Basic Vulnerability Check
+
+---
+
+## ⚙ Advanced Tools
+
+- DNS Lookup
+- IP Information
+- WHOIS Lookup
+
+---
+
+## 📈 Reports & Dashboard
+
+- System Report
+- Network Report
+- Security Report
+
+---
+
+## 📡 Live Traffic Monitor
+
+- Established Connections
+- Listening Ports
+- Network Statistics
+
+---
+
+## 🛠 Maintenance Tools
+
+- Flush DNS Cache
+- Clear Temporary Files
+- Repair Network Stack
+- Driver Information
+
+---
+
+## ⚡ Quick Actions
+
+- IP Configuration
+- Release / Renew IP
 - Netstat
+- Firewall Status
+- ARP Table
+- Route Table
+- Wi-Fi Profiles
 
-## Getting Started
+---
 
-Clone the repository:
+# Screenshots
+
+## Main Dashboard
+
+<p align="center">
+<img src="screenshots/home.png" width="900">
+</p>
+
+---
+
+# Technologies Used
+
+| Technology | Description |
+|------------|-------------|
+| Batch Script | Main Application Logic |
+| CMD | Windows Command Utilities |
+| PowerShell | Automation & Advanced Commands |
+| WMIC | Hardware & System Information |
+| Netsh | Network & Firewall Management |
+| Netstat | Network Monitoring |
+| Windows Utilities | Built-in Administrative Tools |
+
+---
+
+# Installation
+
+Clone the repository
 
 ```bash
 git clone https://github.com/ahaliMz/CyberWatch.git
 ```
 
-Run the application with administrative privileges:
+Go to project directory
 
 ```bash
 cd CyberWatch
+```
+
+Run the application
+
+```bash
 src\cyberwatch.bat
 ```
 
-## Project Structure
+> **Run as Administrator** for full functionality.
+
+---
+
+# Project Structure
 
 ```
-CyberWatch/
-├── src/
-│   └── cyberwatch.bat
-├── screenshots/
+CyberWatch
+│
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── screenshots
+│   └── home.png
+│
+├── src
+│   └── cyberwatch.bat
+│
+└── docs
 ```
 
-## Future Enhancements
+---
 
-- Performance history
-- Email notifications
-- Export reports
-- GUI version
-- Multi-device monitoring
+# Use Cases
 
-## Author
+- Windows Administration
+- Network Troubleshooting
+- IT Infrastructure Monitoring
+- Help Desk Operations
+- Security Auditing
+- Preventive Maintenance
+- Remote Client Management
+
+---
+
+# Future Improvements
+
+- GUI Version
+- Email Notification
+- CSV/PDF Report Export
+- Multi-Client Monitoring
+- Scheduled Monitoring
+- Dashboard Analytics
+
+---
+
+# Author
 
 **Abdul Halim**
 
@@ -67,6 +250,16 @@ GitHub: https://github.com/ahaliMz
 
 Email: ahalim.cse20@gmail.com
 
-## License
+---
 
-This project is released under the MIT License.
+# License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+### ⭐ If you like this project, don't forget to star the repository!
+
+</div>
