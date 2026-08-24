@@ -111,5 +111,5 @@ This project is licensed under the [MIT License](LICENSE) - feel free to modify,
 ---
 
 <div align="center">
-  <sub>Developed with ❤️ for the Cybersecurity & SysAdmin Community.</sub>
+  <sub>Built with ❤️ by Abdul Halim</sub>
 </div>
