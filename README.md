@@ -24,7 +24,7 @@
 
 ## ⚡ Overview
 
-**CYBERWATCH** is a lightweight, blazing-fast, standalone CLI security and network diagnostic suite designed for system administrators, security analysts, and network engineers. Built with native C# asynchronous concurrency, CYBERWATCH provides real-time system monitoring, multi-threaded subnet scanning, security event log auditing, and one-click diagnostic repair tools with **zero external dependencies**.
+**CYBERWATCH** is a lightweight, fast, standalone CLI security and network diagnostic suite designed for system administrators, security analysts, and network engineers. Built with native C# asynchronous concurrency, CYBERWATCH provides real-time system monitoring, multi-threaded subnet and port scanning, security event log auditing, and diagnostic repair tools with **zero external dependencies**.
 
 ---
 
@@ -33,18 +33,18 @@
 | Category | Module | Highlights |
 | :--- | :--- | :--- |
 | **System & Hardware** | **[01] Hardware Health** | Real-time graphical gauges (`[■■■···]`) for CPU, RAM, Disk partitions, Uptime & Top Resource-consuming processes. |
-| **Client Management** | **[02] Remote Control** | Remote ping latency, logged users query (`quser`), shared folders, disk inspection & remote restart/shutdown with abort safety. |
+| **Client Management** | **[02] Remote Control** | Remote ping latency, logged users query (`quser`), shared folders, WMI disk inspection & remote restart/shutdown with confirmation and abort safety. |
 | **Network Diagnostics**| **[03] Latency & Route** | ICMP ping tests, continuous real-time ping graph, DNS lookup, 30-hop traceroute & active TCP connections table. |
-| **Firewall Management**| **[04] Firewall Profiles** | Instant inspection of Domain, Private, and Public profiles, active rule inspector, and quick toggle switches. |
-| **Security & Logs** | **[05] Threat Hunter** | Real-time audit of Event 4625 (Failed Logins / Brute Force Hunter), system critical logs, Windows Defender status, and listening ports. |
-| **Live Automation** | **[06] Alerts & Alarm** | Live All-in-One Dashboard, configurable CPU/RAM overload thresholds with audio beep alerts (`Console.Beep`) & host heartbeat watcher. |
+| **Firewall Management**| **[04] Firewall Profiles** | Instant inspection of Domain, Private, and Public profiles, active rule inspector, and safe enable/disable switches. |
+| **Security & Logs** | **[05] Threat Hunter** | Real-time audit of Event 4625 (Failed Logins / Brute Force Hunter), system critical logs, Windows Defender / Antivirus status (`SecurityCenter2`), and listening ports. |
+| **Live Automation** | **[06] Alerts & Alarm** | Flicker-free Live Dashboard, configurable CPU/RAM overload thresholds with audio alerts (`Console.Beep`), host heartbeat watcher & `Cyberwatch_Alerts.log` persistence. |
 | **System Health** | **[07] Integrity Checks**| Gateway, loopback, and DNS pass/fail verification, critical services monitor (W32Time, DHCP, Spooler), and SFC / CHKDSK launcher. |
-| **High-Speed Scanner** | **[08] Async Scanner** | **Subnet Ping Sweep:** Scans 254 IPs (`1-254`) simultaneously in ~1 sec.<br>**Port Scanner:** Parallel multi-port socket audit for Top 20 services. |
-| **Threat Intelligence**| **[09] Public Identity** | Auto-detects Public IP, ISP provider, ASN, City, and Country with threat intel endpoint resolution. |
-| **Bandwidth Meter** | **[10] Live Traffic** | Live per-second Download (RX) and Upload (TX) speed meter with dynamic visual speed bars (`[▼▼▼...]` / `[▲▲▲...]`). |
-| **Maintenance** | **[11] Repair Stack** | 1-Click DNS Flush, Winsock & TCP/IP stack reset, IP release/renew, and temporary file cache cleaner. |
-| **WiFi Security** | **[12] Key Auditor** | Lists saved WiFi profiles and reveals cleartext network passwords (`key=clear`). |
-| **Audit Reporting** | **[13] HTML Exporter** | Generates a dark-themed HTML executive diagnostic report and automatically launches it in the default browser. |
+| **High-Speed Scanner** | **[08] Async Scanner** | **Subnet Ping Sweep:** Parallel scan of 254 IPs (`1-254`) with optional CSV export.<br>**Port Scanner:** Parallel audit for Top 20 or custom port ranges (`80,443,8000-8010`) with CSV export. |
+| **Threat Intelligence**| **[09] Public Identity** | Auto-detects Public IP, ISP/Org, ASN, Region, City, and Country over HTTPS. |
+| **Bandwidth Meter** | **[10] Live Traffic** | Flicker-free in-place Download (RX) and Upload (TX) meter with interface picker, peak speed tracking & visual bars (`[▼▼▼...]` / `[▲▲▲...]`). |
+| **Maintenance** | **[11] Repair Stack** | DNS Flush, Winsock & TCP/IP stack reset, IP release/renew, and temporary file cache cleaner with confirmation prompts. |
+| **WiFi Security** | **[12] Key Auditor** | Lists saved WiFi profiles with numbered selector and reveals cleartext network passwords (`key=clear`). |
+| **Audit Reporting** | **[13] HTML Exporter** | Generates a 7-section dark-themed HTML SOC report (Hardware, Drives, NICs, Antivirus, Listening Ports, Firewall & Event 4625) and launches it in the browser. |
 | **Network Tables** | **[14] Quick Routing** | Complete `ipconfig /all` and IPv4 routing tables at a glance. |
 
 ---
@@ -59,7 +59,7 @@ CYBERWATCH features dynamic theme switching right from the main menu:
   - 🌌 **Midnight Blue** *(Deep navy SOC aesthetic with golden text)*
   - 🟢 **Matrix Green** *(Classic terminal hacker green)*
 - **`S`** : Toggle Audio Beep Alarm on/off.
-- **⏱️ Real-time Clock** : Live, second-by-second live clock ticker displayed in the top-right corner.
+- **⏱️ Real-time Clock** : Live, second-by-second clock ticker displayed in the top-right corner.
 
 ---
 
@@ -75,12 +75,20 @@ CYBERWATCH features dynamic theme switching right from the main menu:
    ```cmd
    .\Cyberwatch.exe
    ```
-   > *Note: CYBERWATCH will automatically request Administrator privileges if required for network/service operations.*
+   > *Note: CYBERWATCH will request Administrator privileges on launch (pass `--no-elevate` or decline UAC to run in standard user mode).*
 
-### Option 2: Build from Source
-Compile using the built-in Windows .NET C# compiler (`csc.exe`):
+### Option 2: Build & Test from Source
+Build using the included script (uses the built-in Windows .NET Framework `csc.exe`, zero SDK required):
 ```cmd
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /optimize+ /t:exe /out:Cyberwatch.exe /r:System.dll,System.Core.dll,System.Data.dll,System.Management.dll,System.ServiceProcess.dll Cyberwatch.cs
+build.cmd
+```
+Build **and run unit tests**:
+```cmd
+build.cmd test
+```
+Or compile via MSBuild:
+```cmd
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe Cyberwatch.csproj /p:Configuration=Release /t:Rebuild
 ```
 
 ---
@@ -89,11 +97,24 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /optimize+ /t:exe /out:C
 
 ```
 CyberWatch/
-├── Cyberwatch.exe       # Portable standalone compiled binary
-├── Cyberwatch.cs        # Full C# native source code
-├── Cyberwatch.cmd       # Classic batch script fallback
-├── .gitignore           # Git ignore configuration
-└── README.md            # Documentation and user manual
+├── Cyberwatch.exe              # Portable standalone compiled binary
+├── Cyberwatch.csproj           # MSBuild project file (.NET Framework 4.5)
+├── Cyberwatch.cmd              # Classic batch script fallback
+├── app.manifest                # Windows 10/11 compatibility & UAC manifest
+├── build.cmd                   # One-click build & unit test runner
+├── src/
+│   ├── Program.cs              # Entry point, UAC elevation & main menu
+│   ├── UITheme.cs              # Themes, header, live clock & console helpers
+│   ├── Helpers.cs              # Input validation, process runner & system metrics
+│   └── Modules/
+│       ├── SystemModules.cs    # Hardware health, remote client, checks & repair
+│       ├── NetworkModules.cs   # Diagnostics, async scanner, geo IP & bandwidth
+│       └── SecurityModules.cs  # Firewall, logs, AV, alarms, WiFi & HTML report
+├── tests/
+│   └── Cyberwatch.Tests.cs     # Unit tests for validators, parsers & UI helpers
+├── .github/workflows/ci.yml    # GitHub Actions build & test pipeline
+├── .gitignore                  # Git ignore configuration
+└── README.md                   # Documentation and user manual
 ```
 
 ---

@@ -2,9 +2,15 @@
 *.obj
 *.pdb
 *.tmp
+bin/
+obj/
+tests/*.exe
+Cyberwatch.Tests.exe
 
-# Generated HTML / Audit Reports
+# Generated Reports, Scan Exports & Logs
 Cyberwatch_Report_*.html
+Cyberwatch_Scan_*.csv
+Cyberwatch_Alerts.log
 
 # OS Generated
 Thumbs.db
